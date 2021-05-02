@@ -1,0 +1,2 @@
+文件上传功能报错Current request is not a multipart request
+在文件上传功能报这种错误时，原因是from标签内未添加enctype="multipart/form-data"，因为在表单中的默认情况，这个编码格式是application/x-www-form-urlencoded，不能用于文件上传；只有使用了multipart/form-data，才能完整的传递文件数据。

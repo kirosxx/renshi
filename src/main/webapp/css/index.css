@@ -1,0 +1,77 @@
+
+/* 按钮样式 */
+.button {
+    display: inline-block;
+    border-radius: 8px;
+    background-color: #436eee;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 17px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+/* 居中毛玻璃效果 */
+body {
+    min-height:100vh;
+    box-sizing:border-box;
+    margin:0;
+    padding-top:calc(50vh - 8em);
+    font-size: 20px;
+}
+body,.center::before {
+    background:url(../images/show.jpg) 0 / cover fixed;
+}
+.center {
+    position:relative;
+    margin:0 auto;
+    padding:1em;
+    max-width:23em;
+    background:hsla(0,0%,100%,.25) border-box;
+    overflow:hidden;
+    border-radius:.3em;
+    box-shadow:0 0 0 1px hsla(0,0%,100%,.3) inset,0 .5em 1em rgba(0,0,0,0.6);
+    text-shadow:0 1px 1px hsla(0,0%,100%,.3);
+}
+.center::before {
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:-30px;
+    z-index:-1;
+    -webkit-filter:blur(20px);
+    filter:blur(20px);
+}
